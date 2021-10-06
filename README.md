@@ -8,7 +8,7 @@
 
 ### 1. Require with [Composer](https://getcomposer.org/)
 ```sh
-composer require orangehill/iseed
+composer require kazak71/iseed
 ```
 
 **Laravel 5.3.7 and below** or **Laravel 4** need specific version
