@@ -74,9 +74,9 @@ class IseedCommand extends Command
         if ($chunkSize < 1) {
             $chunkSize = null;
         }
-        
-        if($this->argument('tables') === null){
-            $tables = Schema::getConnection()->getDoctrineSchemaManager()->listTableNames();
+
+        if ($this->argument('tables') === null) {
+            $tables = \Schema::getConnection()->getDoctrineSchemaManager()->listTableNames();
         }
 
         $tableIncrement = 0;
@@ -202,7 +202,7 @@ class IseedCommand extends Command
      * @param  string $table
      * @return string
      */
-    protected function generateFileName($table, $prefix=null, $suffix=null)
+    protected function generateFileName($table, $prefix = null, $suffix = null)
     {
         if (!\Schema::connection($this->option('database') ? $this->option('database') : config('database.default'))->hasTable($table)) {
             throw new TableNotFoundException("Table $table was not found.");
